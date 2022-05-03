@@ -66,7 +66,7 @@ const quotes = [
   {
     quote: '" You miss 100 percent of the shots you never take. "',
     source: 'Wayne Gretzky - Michael Scott',
-    tags: 'humor'
+    tags: 'humor &#128513'
   }
 ]
 
@@ -109,7 +109,7 @@ function printQuote(){
 
   if(callRandom.tags){
     html+= `
-    <span class="tags"> - ${callRandom.tags} &#128513</span>
+    <span class="tags"> - ${callRandom.tags} </span>
     `
   }
 
