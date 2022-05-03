@@ -10,7 +10,7 @@ project 1 - A Random Quote Generator
   /*
   * Author: Travis Brown
   * Grade Goal: Exceeds Expectations
-  * Will accept meets expectations
+  * (Will accept meets expectations)
   */
 
 /*** 
@@ -133,7 +133,7 @@ function changeColor(){
   document.body.style.background = randomRGB;
 }
 
-
+// Automatically prints a new quote after 10 seconds
 setInterval(printQuote, 10000);
 
 
