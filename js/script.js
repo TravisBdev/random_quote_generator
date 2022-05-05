@@ -91,7 +91,7 @@ function getRandomQuote() {
 function printQuote(){
   let callRandom = getRandomQuote();
   let html = `
-  <p class = "quotes">${callRandom.quote}
+  <p class = "quote">${callRandom.quote}
   <p class = "source">${callRandom.source}
   `
   // If statements check for citation and year attributes. Concats if true.
@@ -115,16 +115,18 @@ function printQuote(){
 
   html+= `</p>`;
 
-// Changes background color to random RGB value.
+  // Changes background color to random RGB value.
   changeColor();
   
-// Appends completed string to page.
+  // Appends completed string to page.
   let quoteBox = document.querySelector('.quote-box');
   quoteBox.innerHTML = html;
+
+  reset();
   
 }
 
-// Changes the background color to random RGB valuewhen a new quote is displayed
+  // Changes the background color to random RGB valuewhen a new quote is displayed
 function changeColor(){
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
@@ -133,8 +135,22 @@ function changeColor(){
   document.body.style.background = randomRGB;
 }
 
-// Automatically prints a new quote after 10 seconds
-setInterval(printQuote, 10000);
+
+
+
+
+  // Automatically prints a new quote after 10 seconds, then resets the interval when printQuote() fires.
+  let interval = setInterval(printQuote, 10000);
+
+  let reset = function() {
+    clearInterval(interval);
+    interval = setInterval(printQuote, 10000);
+  }
+
+
+
+
+
 
 
 /***
